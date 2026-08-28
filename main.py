@@ -6,10 +6,14 @@ import speech_recognition as sr
 from google import genai
 
 import Library
+import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 recognizer = sr.Recognizer()
-newsapi = "0"
-GEMINI_API_KEY = "0"
+newsapi = os.getenv("NEWS_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
